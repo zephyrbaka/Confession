@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💌</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/confetti-js@0.0.18/dist/index.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #ffe6f0, #fff);
+
+      /* 🌸 bunga pattern */
+      background-image: url("https://www.transparenttextures.com/patterns/flowers.png");
+      background-repeat: repeat;
+      background-size: 200px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      overflow: hidden;
+      position: relative;
+    }
+
+    /* background text */
+    body::before {
+      content: "So, ktk mok sk jdi gerek mekk ?";
+      position: absolute;
+      font-size: 4vw;
+      font-weight: 800;
+      color:#ff4d88;
+      top: 20%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.3;
+    }
+
+    /* gif */
+    .gif-container img {
+      width: 150px;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* button layout */
+    .button-container {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+      
+    }
+
+    button {
+      padding: 12px 22px;
+      border-radius: 18px;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+
+    #yes-button {
+      background: #ff4d88;
+      color: white;
+    }
+
+    #no-button {
+      background: #ddd;
+      color: #333;
+    }
+
+    /* confetti */
+    #confetti-canvas {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+    left: 0;
+    z-index: 1;
+    }
+</style>
+</head>
+
+<body>
+
+<main>
+
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="gif-container">
+    <img src="pls.gif" alt="cute gif" />
+  </div>
+
+  <div class="button-container">
+    <button id="no-button">No 😢</button>
+    <button id="yes-button">Yes 🥺💖</button>
+  </div>
+
+</main>
+
+<script>
+const noButton = document.getElementById("no-button");
+const yesButton = document.getElementById("yes-button");
+
+/* NO button lari */
+noButton.addEventListener("mouseover", () => {
+  const padding = 30;
+
+  const maxX = window.innerWidth - noButton.offsetWidth - padding;
+  const maxY = window.innerHeight - noButton.offsetHeight - padding;
+
+  const x = Math.random() * maxX;
+  const y = Math.random() * maxY;
+
+  noButton.style.position = "fixed";
+  noButton.style.left = x + "px";
+  noButton.style.top = y + "px";
+});
+
+/* YES button */
+yesButton.addEventListener("click", () => {
+  const canvas = document.getElementById("confetti-canvas");
+
+  const confetti = new ConfettiGenerator({
+    target: canvas,
+    max: 200,
+    colors: [[255,105,180],[255,182,193]]
+  });
+
+  confetti.render();
+
+  // hide UI
+  document.querySelector(".button-container").style.display = "none";
+  document.querySelector(".gif-container").style.display = "none";
+
+  // 💌 DIRECT REDIRECT (NO TEXT, NO DELAY)
+  window.location.href = "final.html";
+});
+</script>
+
+</body>
+</html>

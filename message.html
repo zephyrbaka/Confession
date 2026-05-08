@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💌 Message</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial;
+        }
+
+        body {
+            height: 100vh;
+            background: linear-gradient(135deg, #ffe6f0, #fff);
+
+            background-image: url("https://www.transparenttextures.com/patterns/flowers.png");
+            background-repeat: repeat;
+            background-size: 200px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* flowers */
+        body::before {
+            content: "🌹 🌸 🌼 🌹 🌸 🌼 🌹 🌸 🌼";
+            position: absolute;
+            font-size: 45px;
+            opacity: 0.12;
+            white-space: pre;
+            animation: float 25s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+            }
+
+            100% {
+                transform: translateY(-200px);
+            }
+        }
+
+        /* card */
+        .card {
+            background: rgba(255, 255, 255, 0.88);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 380px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #ff4d88;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #444;
+            margin: 10px 0;
+            line-height: 1.5;
+        }
+
+        .highlight {
+            color: #ff4d88;
+            font-weight: bold;
+        }
+
+        img {
+            width: 140px;
+            margin: 10px 0;
+        }
+
+        /* button */
+        button {
+            margin-top: 15px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 20px;
+            background: #ff4d88;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="card">
+
+        <h1>💖 Hi Zulaikha</h1>
+
+        <p>sumpah mek sktauk cmni nak ambik ati ktk  hehehe 🌸</p>
+
+        <p>dri awal ktkk masok kv tok dolokk..ktk dh curik perhatian mek :(</p>
+
+        <p class="highlight">Tiap ari ada jk mek fikir psl ktkk 🥺</p>
+
+        <p>And senanyaa ehh...</p>
+
+        <p class="highlight">Mek sa mek ada perasaan lebih dri kwn bila ngan ktk 💌</p>
+
+        <p>So mek polah tok untuk ktk hshsh 💖</p>
+
+
+
+        <button onclick="location.href='Yes_No.html'">
+            Continue 💌
+        </button>
+
+    </div>
+
+</body>
+
+</html>
